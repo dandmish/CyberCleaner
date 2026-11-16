@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c60e05a0xpt8w"]
+
+[ext_resource type="Script" uid="uid://cc0survw8cwwi" path="res://Scripts/Bug.cs" id="1_ivymh"]
+[ext_resource type="Texture2D" uid="uid://ckhcpcvcmn383" path="res://icon.svg" id="1_wgok0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8vdo"]
+size = Vector2(257, 256)
+
+[node name="Bug" type="Area2D" unique_id=1402599753]
+position = Vector2(518, 272)
+script = ExtResource("1_ivymh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=902819268]
+scale = Vector2(2, 2)
+texture = ExtResource("1_wgok0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899826421]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_s8vdo")
