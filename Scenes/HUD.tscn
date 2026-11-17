@@ -1,44 +1,125 @@
 [gd_scene format=3 uid="uid://yn445xbtebgl"]
 
 [ext_resource type="Script" uid="uid://b0omi17s66006" path="res://Scripts/HUD.cs" id="1_sd512"]
+[ext_resource type="Texture2D" uid="uid://c55yy6tfk2g6k" path="res://Assets/Sprites/byte_pickup.png" id="2_jo1ms"]
 
 [node name="HUD" type="CanvasLayer" unique_id=678840691]
 script = ExtResource("1_sd512")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=839203406]
+[node name="RootControl" type="Control" parent="." unique_id=353374133]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-metadata/_edit_use_anchors_ = true
+mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=652890203]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="RamBar" type="ProgressBar" parent="MarginContainer/HBoxContainer" unique_id=784667752]
-custom_minimum_size = Vector2(250, 30)
-layout_mode = 2
-show_percentage = false
-
-[node name="RamLabel" type="Label" parent="MarginContainer/HBoxContainer/RamBar" unique_id=1727772962]
+[node name="CurrencyPanel" type="PanelContainer" parent="RootControl" unique_id=330297912]
 layout_mode = 1
-anchors_preset = 15
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 56.0
+offset_transform_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RootControl/CurrencyPanel" unique_id=203640599]
+layout_mode = 2
+
+[node name="BytesRow" type="HBoxContainer" parent="RootControl/CurrencyPanel/VBoxContainer" unique_id=731793928]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ByteIcon" type="TextureRect" parent="RootControl/CurrencyPanel/VBoxContainer/BytesRow" unique_id=141766413]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_jo1ms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BytesLabel" type="Label" parent="RootControl/CurrencyPanel/VBoxContainer/BytesRow" unique_id=1559363807]
+layout_mode = 2
+text = "0 "
+
+[node name="PrestigeLabel" type="Label" parent="RootControl/CurrencyPanel/VBoxContainer" unique_id=417503845]
+layout_mode = 2
+text = "Прошивка: 0"
+
+[node name="SkillTreeButton" type="Button" parent="RootControl" unique_id=863418726]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -405.0
+offset_top = 16.0
+offset_right = -311.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "Прошивка"
+
+[node name="BottomRightMenu" type="HBoxContainer" parent="RootControl" unique_id=957653815]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -54.0
+offset_top = -56.0
+offset_right = -14.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="AchievmentsButton" type="Button" parent="RootControl/BottomRightMenu" unique_id=1248603417]
+layout_mode = 2
+text = "Достижения"
+
+[node name="UpgradesButton" type="Button" parent="RootControl/BottomRightMenu" unique_id=884585984]
+layout_mode = 2
+text = "Улучшения"
+
+[node name="UpgradesPanel" type="PanelContainer" parent="RootControl" unique_id=651928760]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_bottom = -56.0
+grow_horizontal = 0
 grow_vertical = 2
+offset_transform_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="RootControl/UpgradesPanel" unique_id=2009705676]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RootControl/UpgradesPanel/MarginContainer" unique_id=1788552324]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HeaderRow" type="HBoxContainer" parent="RootControl/UpgradesPanel/MarginContainer/VBoxContainer" unique_id=1089391112]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="RootControl/UpgradesPanel/MarginContainer/VBoxContainer/HeaderRow" unique_id=328447688]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Улучшения цикла"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1157815540]
+[node name="CloseButton" type="Button" parent="RootControl/UpgradesPanel/MarginContainer/VBoxContainer/HeaderRow" unique_id=1193569597]
 layout_mode = 2
+text = "X"
 
-[node name="BytesLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1559363807]
+[node name="BuyBugButton" type="Button" parent="RootControl/UpgradesPanel/MarginContainer/VBoxContainer" unique_id=957168236]
 layout_mode = 2
-text = "Bytes: 0 B"
+text = "Запустить баг (1)"
+
+[node name="UpgradeDamageButton" type="Button" parent="RootControl/UpgradesPanel/MarginContainer/VBoxContainer" unique_id=1424172450]
+layout_mode = 2
+text = "Урон клика +1 (5)"

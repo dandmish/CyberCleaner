@@ -1,19 +1,21 @@
 [gd_scene format=3 uid="uid://bwxo0fmr6fqhn"]
 
 [ext_resource type="Script" uid="uid://co4rfqimhnet2" path="res://Scripts/BytePickup.cs" id="1_6l35r"]
-[ext_resource type="Texture2D" uid="uid://ckhcpcvcmn383" path="res://icon.svg" id="1_mmeyo"]
 [ext_resource type="AudioStream" uid="uid://ch7jwcm604fyt" path="res://resources/Sounds/PickupSound.wav" id="2_6l35r"]
+[ext_resource type="Texture2D" uid="uid://c55yy6tfk2g6k" path="res://Assets/Sprites/byte_pickup.png" id="2_vt3w8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pr1q8"]
-radius = 18.0
+radius = 5.9
 
 [node name="BytePickup" type="Area2D" unique_id=1337475861]
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_6l35r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=463075561]
 modulate = Color(0.09896747, 0.83116186, 0.99999994, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_mmeyo")
+position = Vector2(-1.7881393e-07, 0.4999996)
+scale = Vector2(0.31249997, 0.30555555)
+texture = ExtResource("2_vt3w8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1382174584]
 shape = SubResource("CircleShape2D_pr1q8")

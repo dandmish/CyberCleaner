@@ -8,6 +8,7 @@ outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [node name="FloatingText" type="Label" unique_id=1439201603]
+theme_override_font_sizes/font_size = 38
 label_settings = SubResource("LabelSettings_15ln4")
 horizontal_alignment = 1
 vertical_alignment = 1

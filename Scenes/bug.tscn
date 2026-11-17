@@ -1,26 +1,25 @@
 [gd_scene format=3 uid="uid://c60e05a0xpt8w"]
 
 [ext_resource type="Script" uid="uid://cc0survw8cwwi" path="res://Scripts/Bug.cs" id="1_ivymh"]
-[ext_resource type="Texture2D" uid="uid://ckhcpcvcmn383" path="res://icon.svg" id="1_wgok0"]
 [ext_resource type="PackedScene" uid="uid://jv6hllcujf7q" path="res://Scenes/FloatingText.tscn" id="2_bhewd"]
 [ext_resource type="PackedScene" uid="uid://bwxo0fmr6fqhn" path="res://Scenes/BytePickup.tscn" id="3_s1kct"]
+[ext_resource type="Texture2D" uid="uid://5dynl7k3yi4q" path="res://Assets/Sprites/Bug.png" id="4_aiyty"]
 [ext_resource type="AudioStream" uid="uid://g0twwi6d82n" path="res://resources/Sounds/Hit.wav" id="4_n4v8l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8vdo"]
-size = Vector2(129, 128)
+size = Vector2(28, 32)
 
-[node name="Bug" type="Area2D" unique_id=1402599753]
+[node name="Bug" type="CharacterBody2D" unique_id=322593308]
 position = Vector2(518, 272)
+scale = Vector2(3, 3)
 script = ExtResource("1_ivymh")
 FloatingTextScene = ExtResource("2_bhewd")
 BytePickupScene = ExtResource("3_s1kct")
-DropCount = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=902819268]
-texture = ExtResource("1_wgok0")
+texture = ExtResource("4_aiyty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899826421]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_s8vdo")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=273927629]
