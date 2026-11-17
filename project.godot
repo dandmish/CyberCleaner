@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Cyber-Cleaner"
+run/main_scene="uid://cr22pnlungxca"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://gfu0vewcoplb"
 
 [display]
 
